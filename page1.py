@@ -31,7 +31,7 @@ def page1():
     @st.cache(allow_output_mutation=True)
     def get_dataset(name):
         if name == 'Défaillance Cardiaque':
-            df = pd.read_excel('C:/Users/Mouhamed/Desktop/projet_agile/data/heart.xlsx')
+            df = pd.read_excel('heart.xlsx')
         return df
 
     st.subheader('Raw Data')
