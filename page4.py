@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import openpyxl
 from sklearn.model_selection import train_test_split
 
 from sklearn.linear_model import LogisticRegression
@@ -17,7 +18,7 @@ def page4():
     @st.cache
     def get_dataset(name):
         if name == 'Cancer Du Sein':
-            df = pd.read_excel('C:/Users/Mouhamed/Desktop/projet_agile/data/Breast_cancer.xlsx')
+            df = pd.read_excel('Breast_cancer.xlsx', engine= 'openpyxl')
             df.reset_index(inplace=True)
         return df
 
