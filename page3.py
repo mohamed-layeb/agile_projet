@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import openpyxl
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
@@ -22,7 +23,7 @@ def page3():
     @st.cache
     def get_dataset(name):
         if name == 'Maladie de foie':
-            df = pd.read_excel('C:/Users/Mouhamed/Desktop/projet_agile/data/liver.xlsx')
+            df = pd.read_excel('liver.xlsx', engine= 'openpyxl')
         return df
 
     data_load_state = st.text("Load Data...")
