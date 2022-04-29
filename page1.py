@@ -32,7 +32,7 @@ def page1():
     @st.cache(allow_output_mutation=True)
     def get_dataset(name):
         if name == 'Défaillance Cardiaque':
-            df = pd.read_excel('heart.xlsx', engine=’openpyxl’) 
+            df = pd.read_excel('heart.xlsx', engine= 'openpyxl') 
         return df
 
     st.subheader('Raw Data')
