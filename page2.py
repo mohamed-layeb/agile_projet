@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import openpyxl
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
@@ -20,7 +21,7 @@ def page2():
     @st.cache
     def get_dataset(name):
         if name == 'Diabète':
-            df = pd.read_excel('C:/Users/Mouhamed/Desktop/projet_agile/data/diabetes.xlsx')
+            df = pd.read_excel('diabetes.xlsx', engine= 'openpyxl')
         return df
 
     data_load_state = st.text("Load Data...")
