@@ -4,6 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
 from sklearn import metrics
+import openpyxl
 
 
 def page1():
@@ -31,7 +32,7 @@ def page1():
     @st.cache(allow_output_mutation=True)
     def get_dataset(name):
         if name == 'Défaillance Cardiaque':
-            df = pd.read_excel('heart.xlsx')
+            df = pd.read_excel('heart.xlsx', engine=’openpyxl’) 
         return df
 
     st.subheader('Raw Data')
